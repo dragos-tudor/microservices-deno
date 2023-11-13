@@ -1,0 +1,39 @@
+{
+  "http": {
+    "hostname": "monitor.banking.com",
+    "port": 80
+  },
+  "https": {
+    "hostname": "monitor.banking.com",
+    "certFile": "/workspaces/microservices-deno/certificates/banking.pem",
+    "keyFile": "/workspaces/microservices-deno/certificates/banking-key.pem",
+    "port": 443,
+    "secure": true
+  },
+  "rateLimits": {
+    "global": {
+      "requestsLimit": 1000,
+      "requestsInterval": 1000,
+      "suspendInterval": 900000
+    },
+    "ip": {
+      "requestsLimit": 50,
+      "requestsInterval": 1000,
+      "suspendInterval": 900000
+    }
+  },
+  "identityApi": {
+    "baseUrl": "https://identity.banking.com/v1",
+    "healthUrl": "/health"
+  },
+  "loansApi": {
+    "baseUrl": "https://loan.banking.com/v1",
+    "healthUrl": "/health"
+  },
+  "notificationsApi": {
+    "baseUrl": "https://notifications.banking.com/v1",
+    "healthUrl": "/health"
+  },
+  "apiExpBackoffIntervals": [3, 9, 27, 81, 243],
+  "apiTimeout": 3000
+}

@@ -1,0 +1,22 @@
+# IDE specific files
+.ionide/
+.vscode/
+
+# API keys and secrets
+.env
+
+# JS dist directory
+dist/
+
+# Code Coverage results
+coverage/
+test/coverage
+
+# Deno lock file
+deno.lock
+
+# Sqlite databases
+**/*.db
+
+# api certificates
+*.pem

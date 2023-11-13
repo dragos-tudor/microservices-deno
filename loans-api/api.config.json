@@ -1,0 +1,20 @@
+{
+  "serverOptions": {
+    "hostname": "localhost",
+    "certFile": "/workspaces/microservices-deno/.certificates/localhost.pem",
+    "keyFile": "/workspaces/microservices-deno/.certificates/localhost-key.pem",
+    "port": 5002,
+    "secure": true
+  },
+  "rateLimits": {
+    "global": { "requestsLimit": 10, "requestsInterval": 10000, "suspendInterval": 5000 },
+    "ip": { "requestsLimit": 3, "requestsInterval": 10000, "suspendInterval": 5000 }
+  },
+  "serverCaches": {
+    "discounts": { "expiresAfter": 10000 },
+    "interests": { "expiresAfter": 10000 }
+  },
+  "cookieOptions": {
+    "cookieName": "auth.banking"
+  }
+}

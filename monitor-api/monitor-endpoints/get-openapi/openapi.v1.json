@@ -1,0 +1,72 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "monitor api",
+    "description": "monitor banking api.",
+    "version": "1.0.0"
+  },
+  "servers": [{
+    "url": "https://localhost:5000/v1",
+    "description": "monitor api server"
+  }],
+  "paths": {
+    "/health": {
+      "get": {
+        "description": "get services health",
+        "operationId": "Health",
+        "responses": {
+          "200": {
+            "description": "health response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    { "$ref": "#/components/schemas/HealthDto" }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/openapi": {
+      "get": {
+        "description": "get monitor openapi",
+        "operationId": "OpenApi",
+        "responses": {
+          "200": {
+            "description": "openapi response",
+            "content": {
+              "application/json": { "example": "#" }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "HealthDto": {
+        "type": "object",
+        "required": [ "isIdentityApiHealth", "isLoansApiHealth", "isNotificationsApiHealth" ],
+        "properties": {
+          "isIdentityApiHealth": { "type": "boolean" },
+          "isLoansApiHealth": { "type": "boolean" },
+          "isNotificationsApiHealth": { "type": "boolean" }
+        }
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": { "type": "string" },
+          "title": { "type": "string" },
+          "instance": { "type": "string" },
+          "detail": { "type": "string" },
+          "status": { "type": "integer", "format": "int16" },
+          "traceId": { "type": "string" }
+        }
+      }
+    }
+  }
+}

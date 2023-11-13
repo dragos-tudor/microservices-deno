@@ -1,0 +1,1 @@
+export { registerNotificationv1 } from "./register-notification/registering.js"

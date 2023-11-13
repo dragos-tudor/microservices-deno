@@ -1,0 +1,37 @@
+@identityUrl = https://localhost:5001/v1
+
+# @name login
+POST {{identityUrl}}/accounts/login HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+X-Trace-Id: notifications1
+
+userName=administrator
+&password=!123ABCabc
+
+###
+
+@cookie = {{login.response.headers.Set-Cookie}}
+
+# @name jwt
+GET {{identityUrl}}/jwt/notifications-api HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Cookie: {{cookie}}
+X-Trace-Id: ntifications2
+
+###
+
+@notificationsUrl = https://localhost:5003/v1
+@token = {{jwt.response.headers.authorization}}
+
+# @name sendnotification
+POST {{notificationsUrl}}/notifications HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+Authorization: {{token}}
+X-Trace-Id: notifications2
+
+userName=customer1
+&email=customer1@localhost.ro
+&emailContent=email content
+&notificationId=1
+
+###

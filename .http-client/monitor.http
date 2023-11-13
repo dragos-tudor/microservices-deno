@@ -1,0 +1,11 @@
+# @name health
+GET http://localhost:5100/v1/health HTTP/1.1
+X-Real-IP: 192.168.1.100
+X-Trace-Id: monitor1
+
+###
+
+# @name openapi
+GET https://localhost:5000/v1/openapi HTTP/1.1
+X-Real-IP: 192.168.1.100
+X-Trace-Id: monitor2

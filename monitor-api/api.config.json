@@ -1,0 +1,28 @@
+{
+  "apiName": "monitor-api",
+  "http": {
+    "hostname": "localhost",
+    "port": 5100
+  },
+  "https": {
+    "hostname": "localhost",
+    "certFile": "/workspaces/microservices-deno/.certificates/localhost.pem",
+    "keyFile": "/workspaces/microservices-deno/.certificates/localhost-key.pem",
+    "port": 5000,
+    "secure": true
+  },
+  "identityApi": {
+    "baseUrl": "https://localhost:5001/v1",
+    "healthUrl": "/health"
+  },
+  "loansApi": {
+    "baseUrl": "https://localhost:5002/v1",
+    "healthUrl": "/health"
+  },
+  "notificationsApi": {
+    "baseUrl": "https://localhost:5003/v1",
+    "healthUrl": "/health"
+  },
+  "apiExpBackoffIntervals": [3, 9, 27],
+  "apiTimeout": 500
+}

@@ -1,0 +1,19 @@
+{
+  "apiName": "identity-api",
+  "serverOptions": {
+    "hostname": "localhost",
+    "certFile": "/workspaces/microservices-deno/.certificates/localhost.pem",
+    "keyFile": "/workspaces/microservices-deno/.certificates/localhost-key.pem",
+    "port": 5001,
+    "secure": true
+  },
+  "rateLimits": {
+    "global": { "requestsLimit": 10, "requestsInterval": 10000, "suspendInterval": 5000 },
+    "ip": { "requestsLimit": 3, "requestsInterval": 10000, "suspendInterval": 5000 }
+  },
+  "cookieOptions": {
+    "cookieName": "auth.banking",
+    "maxAge": 5,
+    "domain": "localhost"
+  }
+}

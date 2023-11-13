@@ -1,0 +1,21 @@
+{
+	"build": { 
+		"dockerfile": "Dockerfile"
+	},
+  "customizations": {
+    "vscode": {
+	    "extensions": [
+	    	"denoland.vscode-deno",
+	    	"humao.rest-client"
+	    ]
+    }
+  },
+	"containerEnv": {
+    "SECRET_ENCRYPTION_KEY": "+4TsLSdQkvJUO+/aRs06RA==#UF4E0nLylTWXtSMNP1BnTw==", // "${localEnv:SECRET_ENCRYPTION_KEY}"
+    "SECRET_SIGNING_KEY": "ysTCs3pkotalpyKo3QPEoWWxOd4kP8Q97jx51VTAOs9zKFKai2PcRvPNlQrHHX8s+0TYWtjkN3lCEO64t1IS5A==" // "${localEnv:SECRET_SIGNING_KEY}"
+  },
+	"runArgs": [
+		"--name=microservices-deno",
+		"--hostname=microservices-deno"
+	]
+}

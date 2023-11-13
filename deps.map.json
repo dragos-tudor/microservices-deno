@@ -1,0 +1,12 @@
+{
+  "imports": {
+    "/asserts.ts": "https://deno.land/std@0.204.0/assert/mod.ts",
+    "/mock.ts": "https://deno.land/std@0.204.0/testing/mock.ts",
+    "/cookies.ts": "https://deno.land/std@0.204.0/http/cookie.ts",
+    "/colors.ts": "https://deno.land/std@0.204.0/fmt/colors.ts",
+    "/base64.ts" : "https://deno.land/std@0.204.0/encoding/base64.ts",
+    "/jwt.ts": "https://deno.land/x/djwt@v3.0.0/mod.ts",
+    "/server.ts": "https://deno.land/x/oak@v12.6.1/mod.ts",
+    "/sqlite.ts": "https://deno.land/x/sqlite@v3.8/mod.ts"
+  }
+}
