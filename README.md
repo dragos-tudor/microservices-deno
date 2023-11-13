@@ -4,6 +4,11 @@
 Proof of concept microservices project with Deno.
 
 ### Installation
+- download [vscode](https://code.visualstudio.com/download).
+- install [Docker](https://docs.docker.com/engine/install/).
+- install vscode [remote container](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension.
+- clone this repository.
+- open repository folder in vscode dev container.
 - run script `./certificates.sh` to generate public certificate and private key for `localhost` domain.
 
 ### Using
@@ -43,5 +48,7 @@ Proof of concept microservices project with Deno.
 - microservices use an distributed authorization mechanism based on account roles.
 - public microservices use rate limiting per ip/global to avoid dos/ddos.
 - db queries use parameters [no sql query concatenations].
+- use encryption key to encrypt/decrypt authentication/identity cookies.
+- use signing key to sign/verify jwt authentication tokens.
 
 wip [cors, http cache]
