@@ -1,9 +1,10 @@
-import { closeIdentityDb } from "../../identity-database/mod.js"
-import { logServerListenEvent, logServerErrorEvent } from "./logging.js"
+import { createApiTrace } from "../../../std-modules/std-tracing/mod.js"
+import { getApiName, getServerOptions } from "../../identity-config/mod.js"
+import { handleServerEvents } from "./handling.js"
 
-export const listenServerEvents = (server, db, apiTrace) => {
-  server.addEventListener("listen", logServerListenEvent(apiTrace))
-  server.addEventListener("error", logServerErrorEvent(apiTrace))
-  server.addEventListener("close", () => closeIdentityDb(db))
+export const listenServer = async (server, apiConfig, db) =>
+{
+  handleServerEvents(server, db, createApiTrace(getApiName(apiConfig), 0))
+  await server.listen(getServerOptions(apiConfig))
   return server
 }
