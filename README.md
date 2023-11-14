@@ -35,12 +35,13 @@ Proof of concept microservices project with Deno.
   - monitor microservices health (live health).
 
 ### Observations
-- [std-modules](./std-modules/) contains standard modules [see .Net framework].
-- [webapi-modules](./webapi-modules/) contains webapi modules [see ASP.Net framework].
-- [identity microservice](./identity-api/) use mediator to publish internal messages and to chain multiple message handlers. Use scheduler to resume failed handled messages.
+- [std-modules](./std-modules/) contains independent standard modules (some depending only on `std-errors`).
+- [webapi-modules](./webapi-modules/) contains webapi modules shared by all microservices.
+- [identity microservice](./identity-api/) use mediator to publish internal messages and to chain message handlers. Use scheduler to resume failed handled messages.
 - [loans microservice](./loans-api/) use in-process caching for discout and interest types [rarely changed].
-- [notifications microservice](./notifications-api/) use jwt authentication and is used by [identity microservice](./identity-api/).
+- [notifications microservice](./notifications-api/) use jwt authentication and is used by [identity microservice](./identity-api/). Like [identity microservice](./identity-api/)  use mediator to chain message handlers.
 - [identity microservice](./identity-api/) and [monitor microservices](./monitor-api) use resilient fetch to communicate with other microservices.
+- `idempotency` is implemented on all message handlers and on [notifications microservice](./notifications-api/) endpoint to deduplicate notifications.
 
 ### Security
 - public microservices use cookie as authentication mechanism.
@@ -49,6 +50,6 @@ Proof of concept microservices project with Deno.
 - public microservices use rate limiting per ip/global to avoid dos/ddos.
 - db queries use parameters [no sql query concatenations].
 - use encryption key to encrypt/decrypt authentication/identity cookies.
-- use signing key to sign/verify jwt authentication tokens.
+- use signing key to sign/verify jwt authentication/identity tokens.
 
-wip [cors, http cache]
+wip [cors, http cache, logging]
