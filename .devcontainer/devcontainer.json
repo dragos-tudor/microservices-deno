@@ -1,21 +1,25 @@
 {
-	"build": { 
-		"dockerfile": "Dockerfile"
-	},
+	"image": "ubuntu:22.04",
   "customizations": {
     "vscode": {
-	    "extensions": [
-	    	"denoland.vscode-deno",
-	    	"humao.rest-client"
-	    ]
-    }
+	    "extensions": [ "denoland.vscode-deno", "humao.rest-client" ]
+	  }
+	},
+  "features": {
+    "ghcr.io/dragos-tudor/devcontainer-features/debian-packages": "",
+    "ghcr.io/dragos-tudor/devcontainer-features/debian-user-group": "",
+    "ghcr.io/dragos-tudor/devcontainer-features/debian-deno": ""
   },
 	"containerEnv": {
     "SECRET_ENCRYPTION_KEY": "+4TsLSdQkvJUO+/aRs06RA==#UF4E0nLylTWXtSMNP1BnTw==", // "${localEnv:SECRET_ENCRYPTION_KEY}"
     "SECRET_SIGNING_KEY": "ysTCs3pkotalpyKo3QPEoWWxOd4kP8Q97jx51VTAOs9zKFKai2PcRvPNlQrHHX8s+0TYWtjkN3lCEO64t1IS5A==" // "${localEnv:SECRET_SIGNING_KEY}"
   },
+  "mounts": [
+		"source=deno,target=/home/vscode/.deno"
+  ],
 	"runArgs": [
 		"--name=microservices-deno",
 		"--hostname=microservices-deno"
-	]
+	],
+  "remoteUser": "vscode"
 }
