@@ -15,7 +15,7 @@
     "SECRET_SIGNING_KEY": "ysTCs3pkotalpyKo3QPEoWWxOd4kP8Q97jx51VTAOs9zKFKai2PcRvPNlQrHHX8s+0TYWtjkN3lCEO64t1IS5A==" // "${localEnv:SECRET_SIGNING_KEY}"
   },
   "mounts": [
-		"source=deno,target=/home/vscode/.deno"
+		"source=deno-cache,target=/home/vscode/.deno-cache"
   ],
 	"runArgs": [
 		"--name=microservices-deno",
