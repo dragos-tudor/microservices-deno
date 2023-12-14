@@ -46,8 +46,8 @@ Proof of concept microservices project with Deno.
 ### Security
 - public microservices use cookie as authentication mechanism.
 - private microservice(s) use jwt as authentication mechanism.
-- microservices use an distributed authorization mechanism based on account roles.
-- public microservices use rate limiting per ip/global to avoid dos/ddos.
+- microservices use a distributed authorization mechanism based on account roles.
+- public microservices use rate limiting per ip/global to avoid dos/ddos attacks.
 - db queries use parameters [no sql query concatenations].
 - use encryption key to encrypt/decrypt authentication/identity cookies.
 - use signing key to sign/verify jwt authentication/identity tokens.
