@@ -2,13 +2,16 @@
 	"image": "ubuntu:22.04",
   "customizations": {
     "vscode": {
-	    "extensions": [ "denoland.vscode-deno", "humao.rest-client" ]
+	    "extensions": [ 
+	    	"denoland.vscode-deno", 
+	    	"humao.rest-client" 
+	    ]
 	  }
 	},
   "features": {
-    "ghcr.io/dragos-tudor/devcontainer-features/debian-packages": "",
-    "ghcr.io/dragos-tudor/devcontainer-features/debian-user-group": "",
-    "ghcr.io/dragos-tudor/devcontainer-features/debian-deno": ""
+    "ghcr.io/dragos-tudor/devcontainer-features/debian-packages:1.2": {},
+    "ghcr.io/dragos-tudor/devcontainer-features/debian-user-group:1.3": {},
+    "ghcr.io/dragos-tudor/devcontainer-features/debian-deno:1.5": {}
   },
 	"containerEnv": {
     "SECRET_ENCRYPTION_KEY": "+4TsLSdQkvJUO+/aRs06RA==#UF4E0nLylTWXtSMNP1BnTw==", // "${localEnv:SECRET_ENCRYPTION_KEY}"
