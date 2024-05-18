@@ -1,6 +1,6 @@
 import { assertEquals } from "/asserts.ts"
 import { globalRateLimitingMiddleware, ipRateLimitingMiddleware, rateLimitingMiddleware } from "./rate.limiting.js"
-import { createHeaders, createRealIpHeader } from "../../webapi-headers/mod.js";
+import { createHeaders, createHeader } from "../../webapi-headers/mod.js";
 
 
 Deno.test("to protect against DOS and DDOS attacks => use global rate limiting middlewares", async (t) => {
@@ -73,6 +73,6 @@ Deno.test("to protect against DOS and DDOS attacks => use rate limiting middlewa
 })
 
 const getContext = (ip) => ({
-  request: { url: "http://localhost", headers: createHeaders(createRealIpHeader(ip)) },
+  request: { url: "http://localhost", headers: createHeaders(createHeader("realIp", ip)) },
   response: {}
 })
