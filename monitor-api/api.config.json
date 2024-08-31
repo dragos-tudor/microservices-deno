@@ -1,11 +1,11 @@
 {
   "apiName": "monitor-api",
   "http": {
-    "hostname": "localhost",
+    "hostname": "127.0.0.1",
     "port": 5100
   },
   "https": {
-    "hostname": "localhost",
+    "hostname": "127.0.0.1",
     "certFile": "/workspaces/microservices-deno/.certificates/localhost.pem",
     "keyFile": "/workspaces/microservices-deno/.certificates/localhost-key.pem",
     "port": 5000,

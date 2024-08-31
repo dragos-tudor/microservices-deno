@@ -4,7 +4,7 @@ import { getAdminEmail, getAdminName, getAdminRole } from "./identity-config/mod
 import { createDbRole, createDbPermission, createDbAccount, createIdentityDb, initializeIdentityDb } from "./identity-database/mod.js"
 import { Permissions } from "./identity-permissions/mod.js"
 import { configServer, listenServer } from "./identity-server/mod.js"
-import apiConfig from "./api.config.json" assert { type: "json" }
+import apiConfig from "./api.config.json" with { type: "json" }
 
 // admin password = "!123ABCabc"
 const adminEmail = getAdminEmail(apiConfig)

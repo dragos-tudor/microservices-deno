@@ -1,7 +1,7 @@
 {
   "apiName": "identity-api",
   "serverOptions": {
-    "hostname": "localhost",
+    "hostname": "127.0.0.1",
     "certFile": "/workspaces/microservices-deno/.certificates/localhost.pem",
     "keyFile": "/workspaces/microservices-deno/.certificates/localhost-key.pem",
     "port": 5001,
